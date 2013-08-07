@@ -37,5 +37,10 @@ github "xquartz",    "1.1.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
+github "osx",       "1.6.0"
+github "zsh",       "1.0.0"
+github "wget",      "1.0.0"
 github "python",    "1.2.1"
+github "mongodb",   "1.0.4"
+github "virtualbox","1.0.5"
 github "vagrant",   "1.0.0"
