@@ -36,3 +36,20 @@ github "xquartz",    "1.1.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+github "chrome",            "1.1.1"
+github "hipchat",           "1.0.8"
+github "irssi",             "1.0.1", :repo => "carwin/puppet-irssi"
+github "iterm2",            "1.0.3"
+github "mongodb",           "1.0.4"
+github "ohmyzsh",           "1.0.0", :repo => "samjsharpe/puppet-ohmyzsh"
+github "osx",               "1.6.0"
+github "property_list_key", "0.1.0", :repo => "glarizza/puppet-property_list_key"
+github "python",            "1.2.1"
+github "screen",            "1.0.0"
+github "sublime_text_2",    "1.1.2"
+github "vagrant",           "2.0.11"
+github "virtualbox",        "1.0.5"
+github "wget",              "1.0.0"
+github "zsh",               "1.0.0"
+github "wget",              "1.0.0"
