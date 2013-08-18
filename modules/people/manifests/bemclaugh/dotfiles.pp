@@ -70,6 +70,6 @@ class people::bemclaugh::dotfiles {
         mode => '0644',
         target => "${::boxen_srcdir}/dotfiles/.zshrc",
         require => Repository["dotfiles"],
-        line => "source ${home}/.zshrc"
+        #line => "source ${home}/.zshrc"
     }
 }
