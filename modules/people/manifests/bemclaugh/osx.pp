@@ -3,7 +3,7 @@ class people::bemclaugh::osx {
     notify { 'class people::bemclaugh::osx declared': }
 
     include osx::software_update
-    include osx::recovery_message { 'If this Mac is found, please call 808.261.0616': }
+    #osx::recovery_message { 'If this Mac is found, please call 808.261.0616': }
 
     include osx::global::disable_key_press_and_hold
     include osx::global::disable_remote_control_ir_receiver
