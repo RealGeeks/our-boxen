@@ -1,41 +1,38 @@
 class people::bemclaugh::dotfiles {
 
-    notify { 'class people::bemclaugh::dotfiles declared': }
-
     include people::bemclaugh::my_repo
+
+    $home         = $people::bemclaugh::my_repo::home
+    $dotfiles = $people::bemclaugh::my_repo::dotfiles 
 
     file { "${home}/.gitconfig":
         ensure => link,
-        target => "${dotfiles_dir}/gitconfig",
-        require => Repository[$dotfiles_dir],
+        target => "${dotfiles}/gitconfig",
+        require => Repository[$dotfiles],
     }
 
     file { "${home}/.gitignore_global":
         ensure => link,
-        target => "${dotfiles_dir}/gitignore_global",
-        require => Repository[$dotfiles_dir],
+        target => "${dotfiles}/gitignore_global",
+        require => Repository[$dotfiles],
     }
 
     file { "${home}/.profile":
         ensure => link,
-        target => "${dotfiles_dir}/profile",
-        require => Repository[$dotfiles_dir],
+        target => "${dotfiles}/profile",
+        require => Repository[$dotfiles],
     }
 
     file { "${home}/.aliases":
         ensure => link,
-        target => "${dotfiles_dir}/aliases",
-        require => Repository[$dotfiles_dir],
+        target => "${dotfiles}/aliases",
+        require => Repository[$dotfiles],
     }
 
     file { "${home}/.zshrc":
         ensure => link,
-        target => "${dotfiles_dir}/zshrc",
-        require => Repository[$dotfiles_dir],
+        target => "${dotfiles}/zshrc",
+        require => Repository[$dotfiles],
     }
-
-    #file { "${home}/.oh-my-zsh":
-    #    ensure => link,
-    #    target => "${::boxen_srcdir}/oh-my-zsh/.oh-my-zsh",
-    #}
 }
+
