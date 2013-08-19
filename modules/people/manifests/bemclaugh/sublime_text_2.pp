@@ -2,19 +2,21 @@ class people::bemclaugh::sublime_text_2 {
 
     notify { 'class people::bemclaugh::sublime_text_2 declared': }
 
+    include people::bemclaugh::my_repo
+
     $home         = "/Users/${::boxen_user}"
-    $dotfiles_dir = "${home}/git/dotfiles"
     $base         = "${home}/Library/Application Support"
+    $sublime_dir  = "${base}/Sublime Text 2/Packages/User"
 
-    repository { $dotfiles_dir:
-        source => "${::github_user}/dotfiles"
+    file { $sublime_dir:
+        ensure => directory,
     }
 
-    exec { 'Idempotent creation of User preferences directory':
-        command => "mkdir -p '${base}/Sublime Text 2/Packages/User'"
-    }
+    #exec { 'Idempotent creation of User preferences directory':
+    #    command => "mkdir -p '${base}/Sublime Text 2/Packages/User'"
+    #}
 
-    file { "${base}/Sublime Text 2/Packages/User/Preferences.sublime-settings":
+    file { "${$sublime_dir}/Preferences.sublime-settings":
         ensure  => link,
         target  => "${dotfiles_dir}/.sublime/Preferences.sublime-settings",
         require => Repository[$dotfiles_dir],
