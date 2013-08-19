@@ -1,5 +1,5 @@
 define repo::realgeeks {
 	repository { "${boxen::config::srcdir}/${title}":
-		source => "${::luser}@github.com:RealGeeks/${title}",
+		source => "${::boxen_user}@github.com:RealGeeks/${title}",
 	}
 }
