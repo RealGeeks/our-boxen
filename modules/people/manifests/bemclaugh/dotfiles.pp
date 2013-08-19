@@ -2,12 +2,7 @@ class people::bemclaugh::dotfiles {
 
     notify { 'class people::bemclaugh::dotfiles declared': }
 
-    $home       = "/Users/${::boxen_user}"
-    $dotfiles_dir = "${home}/git/dotfiles"
-
-    repository { $dotfiles_dir:
-        source => "${::github_user}/dotfiles"
-    }
+    include people::bemclaugh::my_repo
 
     file { "${home}/.gitconfig":
         ensure => link,
