@@ -15,15 +15,15 @@ class people::bemclaugh::sublime_text_2 {
 
     file { "${$sublime_dir}/Preferences.sublime-settings":
         ensure  => link,
-        target  => "${dotfiles}/.sublime/Preferences.sublime-settings",
+        target  => "${dotfiles}/sublime_text_2/Preferences.sublime-settings",
         require => Repository[$dotfiles],
     }
 
     sublime_text_2::package { 'SublimeLinter':
-        source => 'SublimeLinter/SublimeLinter'
+        source => 'SublimeLinter/SublimeLinter',
     }
 
     sublime_text_2::package { 'Jinja2':
-        source => 'mitsuhiko/jinja2-tmbundle'
+        source => 'mitsuhiko/jinja2-tmbundle',
     }
 }
