@@ -34,5 +34,19 @@ class people::bemclaugh::dotfiles {
         target => "${dotfiles}/zshrc",
         require => Repository[$dotfiles],
     }
+   
+    file { "${home}/.virtualenvs":
+        ensure => directory,
+    }
+
+    file { "${home}/.oh-my-zsh/themes":
+        ensure => directory,
+    }
+
+    file { "${home}/.oh-my-zsh/themes/bem.zsh-theme":
+        ensure => link,
+        target => "${dotfiles}/bem.zsh-theme",
+        require => Repository[$dotfiles],
+    }
 }
 

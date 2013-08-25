@@ -7,6 +7,6 @@ class people::bemclaugh::osx {
     include osx::global::disable_remote_control_ir_receiver
     class { 'osx::global::key_repeat_delay': delay => 10 }
     class { 'osx::global::key_repeat_rate': rate => 2 }
-    include osx::global::natural_mouse_scrolling
+    class { 'osx::global::natural_mouse_scrolling': enabled => false }
     osx::recovery_message { 'If found, please call 808.261.0616': }
 }
