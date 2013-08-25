@@ -1,5 +1,9 @@
 define repo::realgeeks {
-	Repository { "${boxen::config::srcdir}/${title}":
-		source => "${::boxen_user}@github.com:RealGeeks/${title}",
-	}
+	repository { "${boxen::config::srcdir}/${title}":
+                source  => "https://github.com/RealGeeks/${title}",
+                require => File["${boxen::config::bindir}/boxen-git-credential"],
+                config  => {
+                    'credential.helper' => "${boxen::config::bindir}/boxen-git-credential"
+                }
+        }
 }
