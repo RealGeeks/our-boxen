@@ -6,8 +6,9 @@ class people::bemclaugh::apps {
     include zsh
     include wget
     include python
-    #include python::virtualenv
     include python::virtualenvwrapper
+    #include python::requirements
+    #include python::pip
     include mongodb
     include virtualbox
     include vagrant
@@ -27,14 +28,4 @@ class people::bemclaugh::apps {
         ]:
         ensure => installed,
     }
-    /*
-    package {
-        [
-        'virtualenv',
-        'virtualenvwrapper'
-        ]:
-        ensure => installed,
-        provider => pip,
-    }
-    */
 }

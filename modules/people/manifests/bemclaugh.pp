@@ -12,9 +12,9 @@ class people::bemclaugh {
     include people::bemclaugh::osx
     include people::bemclaugh::sublime_text_2
 
-    include projects::rg2
-    include projects::server_config
-    include projects::pulley
-    include projects::lm_interface
+    include projects::realgeeks::rg2
+    include projects::realgeeks::server_config
+    include projects::realgeeks::pulley
+    include projects::realgeeks::lm_interface
 
 }
