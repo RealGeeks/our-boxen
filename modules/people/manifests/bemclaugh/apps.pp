@@ -10,7 +10,6 @@ class people::bemclaugh::apps {
     include mongodb
     include virtualbox
     include vagrant
-    include sublime_text_2
     include irssi
     include chrome
     include hipchat

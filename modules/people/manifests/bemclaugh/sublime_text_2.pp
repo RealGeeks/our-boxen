@@ -3,6 +3,7 @@ class people::bemclaugh::sublime_text_2 {
     notify { 'class people::bemclaugh::sublime_text_2 declared': }
 
     include people::bemclaugh::my_repo
+    include sublime_text_2
 
     $home         = $people::bemclaugh::my_repo::home
     $dotfiles     = $people::bemclaugh::my_repo::dotfiles
