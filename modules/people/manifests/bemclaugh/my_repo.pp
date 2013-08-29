@@ -1,12 +1,13 @@
 class people::bemclaugh::my_repo {
 
-    $home          = "/Users/${::boxen_user}"
-    $git_dir       = "${home}/git"
+    include people::bemclaugh
+
+    $git_dir  = $people::bemclaugh::git_dir
+    $dotfiles = $people::bemclaugh::dotfiles
+
     file { $git_dir:
         ensure => 'directory',
     }
-    $dotfiles      = "${git_dir}/dotfiles"
-
     repository { $dotfiles:
         source => "${::github_login}/dotfiles",
         require => File[$git_dir],

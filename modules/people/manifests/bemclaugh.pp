@@ -1,5 +1,9 @@
 class people::bemclaugh {
 
+    $home     = "/Users/${::boxen_user}"
+    $git_dir  = "${home}/git"
+    $dotfiles = "${git_dir}/dotfiles"
+
     notify { 'class people::bemclaugh declared': }
     notify { "github user is ${::github_name}": }
     notify { "github email is ${::github_email}": }
@@ -12,6 +16,7 @@ class people::bemclaugh {
     include people::bemclaugh::osx
     include people::bemclaugh::sublime_text_2
 
+    include realgeeks::environment
     include projects::realgeeks::rg2
     include projects::realgeeks::server_config
     include projects::realgeeks::pulley

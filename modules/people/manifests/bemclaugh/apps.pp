@@ -7,8 +7,6 @@ class people::bemclaugh::apps {
     include wget
     include python
     include python::virtualenvwrapper
-    #include python::requirements
-    #include python::pip
     include mongodb
     include virtualbox
     include vagrant
@@ -28,4 +26,11 @@ class people::bemclaugh::apps {
         ]:
         ensure => installed,
     }
+
+    file_line { 'source_boxen_env':
+        path   => "${::boxen_user}/.zshrc",
+        line   => '[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh',
+        ensure => present
+    }
+
 }
