@@ -2,8 +2,7 @@ define repo::realgeeks {
 
 	include "people::${::github_login}"
 
-	#$git_dir  = "$people::${::github_login}::git_dir"
-        $git_dir  = "$people::bemclaugh::git_dir"
+	$git_dir  = "$people::${::github_login}::git_dir"
 
 	repository { "${git_dir}/${title}":
                 source  => "https://github.com/RealGeeks/${title}",
