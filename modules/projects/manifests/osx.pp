@@ -3,6 +3,7 @@ class projects::osx {
     notify { 'class projects::osx declared': }
 
     include osx::software_update
+    include osx::finder::empty_trash_securely
     include osx::global::disable_key_press_and_hold
     include osx::global::disable_remote_control_ir_receiver
     class { 'osx::global::key_repeat_delay': delay => 10 }

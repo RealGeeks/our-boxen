@@ -4,9 +4,7 @@ class projects::sublime_text_2 {
 
     include sublime_text_2
 
-    $home         = /Users/${::boxen_user}
-    $base         = "${home}/Library/Application Support"
-    $sublime_dir  = "${base}/Sublime Text 2/Packages/User"
+    $sublime_dir  = "${app_home}/Sublime Text 2/Packages/User"
 
     file { $sublime_dir:
         ensure => directory,

@@ -1,7 +1,8 @@
 class projects::support {
 
-	notify { 'class projects::apps declared': }
+	notify { 'class projects::support declared': }
 
+	include homebrew
 	include chrome
 	include hipchat
 	include iterm2::stable

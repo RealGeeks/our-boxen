@@ -1,7 +1,9 @@
 class people:Pezzo1234 {
 
-    $home = "/Users/${::boxen_user}"
+    $home     = "/Users/${::boxen_user}"
     $git_dir  = "${home}/git"
+    $app_home = "${home}/Library/Application Support"
+
 
     notify { 'class people::Pezzo1234 declared': }
     notify { "github user is ${::github_name}": }

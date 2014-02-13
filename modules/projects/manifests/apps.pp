@@ -10,8 +10,6 @@ class projects::apps {
     include hipchat
     include ohmyzsh
 
-    $home = /Users/${::boxen_user}
-
     package {
         [
         'htop-osx',
