@@ -10,4 +10,3 @@ class projects::osx {
     class { 'osx::global::natural_mouse_scrolling': enabled => false }
     osx::recovery_message { 'If found, please call 808.261.0616': }
 }
-

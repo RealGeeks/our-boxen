@@ -15,4 +15,3 @@ class projects::sublime_text_2 {
     sublime_text_2::package { 'SublimeLinter':
         source => 'SublimeLinter/SublimeLinter',
     }
-
