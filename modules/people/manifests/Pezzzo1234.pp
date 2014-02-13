@@ -9,6 +9,6 @@ class people:Pezzo1234 {
     notify { "github login is ${::github_login}": }
     notify { "boxen user is ${::boxen_user}": }
 
-    include projects::realgeeks::support
+    include projects::support
 
 }
