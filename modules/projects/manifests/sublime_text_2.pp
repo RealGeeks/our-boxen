@@ -1,6 +1,6 @@
-class projects::support::sublime_text_2 {
+class projects::sublime_text_2 {
 
-    notify { 'class projects::support::sublime_text_2 declared': }
+    notify { 'class projects::sublime_text_2 declared': }
 
     include sublime_text_2
 

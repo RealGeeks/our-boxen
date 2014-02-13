@@ -1,6 +1,6 @@
-class projects::support::apps {
+class projects::apps {
 
-    notify { 'class projects::support::apps declared': }
+    notify { 'class projects::apps declared': }
 
     include iterm2::stable
     include zsh
@@ -9,6 +9,8 @@ class projects::support::apps {
     include chrome
     include hipchat
     include ohmyzsh
+
+    $home = /Users/${::boxen_user}
 
     package {
         [
@@ -22,7 +24,7 @@ class projects::support::apps {
     }
 
     file_line { 'source_boxen_env':
-        path   => "/Users/${::boxen_user}/.zshrc",
+        path   => "${home}/.zshrc",
         line   => '[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh',
         ensure => present
     }

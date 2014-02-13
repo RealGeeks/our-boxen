@@ -1,6 +1,6 @@
-class projects::support::osx {
+class projects::osx {
 
-    notify { 'class projects::support::osx declared': }
+    notify { 'class projects::osx declared': }
 
     include osx::software_update
     include osx::global::disable_key_press_and_hold

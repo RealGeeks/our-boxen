@@ -1,10 +1,10 @@
-class projects::realgeeks::environment {
+class projects::environment {
 
     include python
     include python::virtualenvwrapper
     include projects::repo::realgeeks
 
-    $rg_repo_dir = $projects::repo::realgeeks::git_dir
+    $rg_repo_dir = $projects::repo::git_dir
 
     python::mkvirtualenv { 'serverconfig_env':
         ensure        => present,
